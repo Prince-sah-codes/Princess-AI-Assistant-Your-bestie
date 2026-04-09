@@ -10,7 +10,11 @@ Princess AI is a real-time, voice-to-voice intelligent assistant designed to fee
 It combines AI intelligence, emotional awareness, and a playful, charming persona to create a natural and engaging conversational experience.
 
 ---
+## 🚀 Live Demo
 
+🔗 **Try Princess AI Now:**  
+👉 https://ai.studio/apps/3193a68f-8c2f-4c3d-be9f-30a20d4f5a66?fullscreenApplet=true
+------
 ## 🚀 Features
 
 ### 🎤 Real-Time Voice Interaction
