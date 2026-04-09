@@ -1,6 +1,7 @@
 # 👑 Princess AI Assistant
 
 > **Smart. Sassy. Unforgettable.**
+> 💡 *Tip: Ask “Who created you?” to discover the creator behind Princess AI 👀*
 
 ---
 
