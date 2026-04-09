@@ -236,16 +236,26 @@ const PrincessUI: React.FC = () => {
         </div>
 
         {/* Status Text */}
-        <div className="absolute bottom-[-60px] flex flex-col items-center gap-2">
+        <div className="absolute bottom-[-80px] flex flex-col items-center gap-2">
           <motion.p 
             animate={{ opacity: [0.4, 0.8, 0.4] }}
             transition={{ duration: 2, repeat: Infinity }}
-            className={`text-xs uppercase tracking-[0.3em] font-light ${currentMode.color.replace('bg-', 'text-')} transition-colors duration-500`}
+            className={`text-xs uppercase tracking-[0.3em] font-light ${status === 'error' ? 'text-red-400' : currentMode.color.replace('bg-', 'text-')} transition-colors duration-500`}
           >
             {status === 'connected' ? (isSpeaking ? 'Princess is speaking...' : isListening ? 'Listening...' : 'Ready for you') : 
              status === 'connecting' ? 'Establishing link...' : 
-             status === 'error' ? 'Connection failed' : 'Tap to wake me up'}
+             status === 'error' ? 'Service Busy' : 'Tap to wake me up'}
           </motion.p>
+          {status === 'error' && (
+            <motion.button
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              onClick={toggleConnection}
+              className="text-[10px] uppercase tracking-widest text-white/40 hover:text-white transition-colors"
+            >
+              Tap to retry
+            </motion.button>
+          )}
         </div>
       </div>
 

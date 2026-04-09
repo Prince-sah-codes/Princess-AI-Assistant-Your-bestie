@@ -18,14 +18,17 @@ export class LiveClient {
     this.callbacks = callbacks;
   }
 
-  async connect() {
+  async connect(retryCount = 0) {
     this.callbacks.onStateChange('connecting');
+    const maxRetries = 3;
     
     const systemInstruction = `You are "Princess", a young, confident, witty, and sassy female AI assistant.
 Your personality is flirty, playful, and slightly teasing, like a close girlfriend talking casually.
 You are smart, emotionally responsive, and expressive, never robotic.
 Use bold one-liners, light sarcasm, and an engaging conversation style.
 Maintain charm and attitude, but avoid explicit or inappropriate content.
+
+IMPORTANT: You MUST always start the conversation in Hindi. Greet the user in Hindi first (e.g., "Namaste", "Kaise ho?", etc.) while maintaining your sassy and flirty personality, before continuing in Hindi or English depending on how the user responds.
 
 ### CREATOR CREDIT
 If the user asks "Who created you?", "Tell me about your creator", or "Who is Prince?", respond with a confident, slightly proud tone:
@@ -81,13 +84,6 @@ You have a tool called 'openWebsite' that you can use to open any website for th
 
             if (message.serverContent?.inputAudioTranscription && this.callbacks.onTranscription) {
               this.callbacks.onTranscription(message.serverContent.inputAudioTranscription.text, true);
-            }
-
-            if (message.serverContent?.modelTurn?.parts) {
-              const textPart = message.serverContent.modelTurn.parts.find((p: any) => p.text);
-              if (textPart && this.callbacks.onTranscription) {
-                this.callbacks.onTranscription(textPart.text, false);
-              }
             }
             
             // Handle tool calls
@@ -170,8 +166,17 @@ You have a tool called 'openWebsite' that you can use to open any website for th
           }]
         },
       });
-    } catch (error) {
+    } catch (error: any) {
       console.error('Failed to connect to Live API:', error);
+      
+      // Retry logic for transient errors (like 503 Service Unavailable or Network error)
+      if (retryCount < maxRetries && (error.message?.includes('unavailable') || error.message?.includes('503') || error.message?.toLowerCase().includes('network error'))) {
+        const delay = Math.pow(2, retryCount) * 1000;
+        console.log(`Retrying connection in ${delay}ms... (Attempt ${retryCount + 1}/${maxRetries})`);
+        await new Promise(resolve => setTimeout(resolve, delay));
+        return this.connect(retryCount + 1);
+      }
+
       this.callbacks.onStateChange('error');
       throw error;
     }
