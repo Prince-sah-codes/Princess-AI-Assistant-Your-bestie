@@ -1,20 +1,62 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
-</div>
+# 👑 Princess AI Assistant
 
-# Run and deploy your AI Studio app
+> **Smart. Sassy. Unforgettable.**
 
-This contains everything you need to run your app locally.
+---
 
-View your app in AI Studio: https://ai.studio/apps/3193a68f-8c2f-4c3d-be9f-30a20d4f5a66
+## ✨ Description
 
-## Run Locally
+Princess AI is a real-time, voice-to-voice intelligent assistant designed to feel less like a tool and more like a personality.  
+It combines AI intelligence, emotional awareness, and a playful, charming persona to create a natural and engaging conversational experience.
 
-**Prerequisites:**  Node.js
+---
 
+## 🚀 Features
 
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+### 🎤 Real-Time Voice Interaction
+- Audio-to-audio communication (no text chat)
+- Continuous conversation flow
+- Low latency streaming
+
+### 🎭 Personality System
+- 🥺 Cute Mode – soft, caring, playful  
+- 😈 Savage Mode – bold, witty, teasing  
+- ❤️ Romantic Mode – warm, flirty, engaging  
+
+### 🧠 Emotion Detection
+- Detects user mood:
+  - 😄 Happy
+  - 😔 Sad
+  - 😠 Angry
+  - 🤔 Confused  
+- Adapts responses dynamically
+
+### 💚 Jealous Mode (Fun Feature)
+- Playful reactions when user mentions others  
+- Adds personality depth
+
+### 🔊 Jarvis-Style Sounds
+- Activation sound  
+- Listening feedback  
+- Speaking effects  
+- Error tones  
+
+### 🎨 UI/UX
+- Fullscreen dark futuristic design  
+- Central glowing mic button  
+- Real-time waveform animations  
+- Smooth transitions  
+
+---
+
+## 🛠️ Tech Stack
+
+- **Frontend:** React + TypeScript + Vite  
+- **Styling:** Tailwind CSS  
+- **AI API:** Gemini Live API (@google/genai)  
+- **Audio:** Web Audio API  
+- **Streaming:** Real-time PCM audio  
+
+---
+
+## 🧩 Project Structure
