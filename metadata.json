@@ -1,0 +1,5 @@
+{
+  "name": "Princess AI Assistant",
+  "description": "A real-time, voice-to-voice AI assistant with a sassy, flirty personality, powered by Gemini Live.",
+  "requestFramePermissions": ["microphone"]
+}
