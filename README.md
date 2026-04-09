@@ -1,7 +1,7 @@
 # 👑 Princess AI Assistant
 
 > **Smart. Sassy. Unforgettable.**
-> 💡 *Tip: Ask “Who created you?” to discover the creator behind Princess AI 👀*
+
 
 ---
 
@@ -14,7 +14,7 @@ It combines AI intelligence, emotional awareness, and a playful, charming person
 ## 🚀 Live Demo
 
 [![Live Demo](https://img.shields.io/badge/🚀%20Launch-Princess%20AI-blue?style=for-the-badge&logo=googlechrome)](https://ai.studio/apps/3193a68f-8c2f-4c3d-be9f-30a20d4f5a66?fullscreenApplet=true)
-
+💡 **Tip: Ask “Who created you?” to discover the creator behind Princess AI 👀**
 
 ------
 ## 🚀 Features
